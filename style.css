@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    background-color: white;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO */
+.logo a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+      display: inline-block;   /* importante para que funcione transform */
+    transition: color 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+     transform: scale(1.1); /* crece ligeramente */
+}
+
+
+section {
+    padding: 50px;
+    border-bottom: 3px solid #ccc;  /* línea gris */
+     box-shadow: 0 3px 5px -3px rgba(0,0,0,0.2); /* sombra sutil debajo de la línea */
+    
+}
+
+/* Para la última sección, opcional: quitar la línea inferior */
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Footer más delgado */
+.footer {
+    background-color: #111;
+   color: #9ca3af;
+    padding: 15px 40px;
+}
+
+/* Contenedor superior: izquierda y derecha en la misma línea */
+.footer-left .title {
+    font-weight: bold;
+    font-size: 16px;      /* tamaño principal */
+    margin: 0;             /* quitamos margen superior */
+    padding-top: 5px;      /* un poquito de espacio desde arriba */
+    color: white;
+}
+
+.footer-left p {
+    font-size: 14px;       /* más pequeño que el título */
+    margin: 3px 0 0 0;     /* pequeño margen arriba */
+}
+
+/* Ajuste vertical para alinear con los iconos */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   /* mantiene iconos y texto alineados */
+}
+/* Derecha: iconos en línea */
+.footer-right {
+    display: flex;
+    flex-direction: row; 
+    gap: 15px; 
+    align-items: center;
+}
+
+.footer-right a {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.footer-right a:hover {
+    color: #00bcd4;
+    transform: scale(1.2);
+}
+
+/* Centro */
+.footer-center {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+main {
+    background-color: aliceblue
+}
+
+/* Contenedor horizontal */
+.sobre-mi-container {
+    display: flex;
+    align-items: center;       /* alinea verticalmente */
+    gap: 40px;                 /* espacio entre foto y texto */
+    padding-top: 20px;
+    flex-wrap: wrap;           /* para que en pantallas pequeñas se ponga en vertical */
+}
+
+/* Foto */
+.sobre-mi-container .foto img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;         /* recorta la imagen si es necesario */
+    border-radius: 15px;       /* bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Información */
+.sobre-mi-container .info {
+    flex: 1;                   /* ocupa todo el espacio restante */
+}
+
+/* Párrafos y contacto */
+.sobre-mi-container .info p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.sobre-mi-container .info .contacto p {
+    font-weight: bold;
+    color: #333;
+}
+
+
+.educacion-card {
+    background-color: #fff;       /* card blanca */
+    padding: 25px 30px;
+    border-radius: 15px;          /* bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* sombra sutil */
+    margin-top: 20px;             /* separación entre cards */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto hover: levanta la card ligeramente */
+.educacion-card:hover {
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.educacion-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+  
+}
+
+.educacion-card .titulo-curso {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.educacion-card .fecha {
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+}
+
+/* Sección */
+#experiencia {
+    padding: 50px;
+    border-bottom: 3px solid #ccc;
+    box-shadow: 0 3px 5px -3px rgba(0,0,0,0.1);
+}
+
+/* Card de experiencia */
+.experiencia-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    gap: 20px;
+    flex-wrap: wrap; /* para responsive */
+}
+
+/* Hover */
+.experiencia-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Logo de la empresa */
+.logo-empresa img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Información */
+.info-experiencia h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.info-experiencia .puesto,
+.info-experiencia .descripcion {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.info-experiencia .fecha,
+.info-experiencia .ubicacion {
+    font-size: 14px;
+    color: #666;
+}
+
+#habilidades {
+    padding: 50px;
+    border-bottom: 3px solid #ccc;
+}
+
+.habilidades-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.habilidad-card {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    flex: 1 1 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.habilidad-card:hover {
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.habilidad-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 6px;
+}
+
+.habilidad-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.habilidad-card ul li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Ocultar hamburger en escritorio */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Media query para pantallas pequeñas */
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;        /* justo debajo del header */
+        right: 20px;      /* a la derecha */
+        width: 200px;     /* ancho compacto */
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        flex-direction: column;
+        padding: 0;       /* quitamos padding inicial */
+        gap: 0;
+        max-height: 0;    /* oculto por defecto */
+        overflow: hidden; /* esencial para ocultar */
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        max-height: 500px; /* altura suficiente para mostrar todo */
+        padding: 10px 0;   /* padding solo cuando está activo */
+    }
+
+    .nav-links li {
+        list-style: none;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 12px 20px;
+        text-align: left;
+        color: black;
+        font-weight: 500;
+        border-top: 1px solid #eee;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .nav-links li:first-child a {
+        border-top: none;
+    }
+
+    .nav-links li a:hover {
+        background-color: #f0f0f0;
+        transform: scale(1.02);
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
