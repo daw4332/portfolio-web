@@ -36,4 +36,4 @@ navLinks.forEach(link => {
 // Abrir/cerrar menú hamburguesa
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-});
+}); 

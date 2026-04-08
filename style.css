@@ -166,7 +166,7 @@ main {
 /* Efecto hover: levanta la card ligeramente */
 .educacion-card:hover {
 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.20);
 }
 
 .educacion-card h3 {
@@ -210,7 +210,7 @@ main {
 
 /* Hover */
 .experiencia-card:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.20);
 }
 
 /* Logo de la empresa */
@@ -263,7 +263,7 @@ main {
 }
 
 .habilidad-card:hover {
-    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.20);
 }
 
 .habilidad-card h3 {
