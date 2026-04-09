@@ -1,9 +1,12 @@
+// 1. Selección de elementos del DOM
 const header = document.querySelector('header');
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-links');
 const navLinks = document.querySelectorAll('.nav-links a');
+const darkToggle = document.querySelector('.dark-toggle');
+const darkIcon = darkToggle.querySelector('i'); // icono dentro del toggle
 
-// Función para scroll con offset
+// 2. Función para scroll con offset
 function scrollToSection(target) {
     const headerOffset = header.offsetHeight;
     const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
@@ -15,7 +18,7 @@ function scrollToSection(target) {
     });
 }
 
-// Scroll suave al hacer click en cualquier enlace
+// 3. Scroll suave al hacer click en enlaces
 navLinks.forEach(link => {
     link.addEventListener('click', e => {
         e.preventDefault();
@@ -28,35 +31,37 @@ navLinks.forEach(link => {
             scrollToSection(target);
         }
 
-        // Cierra el menú si está activo (móviles)
-        navMenu.classList.remove('active');
+        navMenu.classList.remove('active'); // cerrar menú en móviles
     });
 });
 
-// Abrir/cerrar menú hamburguesa
+// 4. Abrir/cerrar menú hamburguesa
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-}); 
+});
 
-const darkToggle = document.querySelector('.dark-toggle');
-
+// 5. Toggle modo oscuro con cambio de icono
 darkToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark');
 
-    // Guardar preferencia
     if (document.body.classList.contains('dark')) {
+        darkIcon.classList.replace('fa-moon', 'fa-sun');
         localStorage.setItem('theme', 'dark');
     } else {
+        darkIcon.classList.replace('fa-sun', 'fa-moon');
         localStorage.setItem('theme', 'light');
     }
 });
 
-// Mantener modo al recargar
+// 6. Mantener modo al recargar y ajustar icono
 window.addEventListener('load', () => {
     const savedTheme = localStorage.getItem('theme');
+
     if (savedTheme === 'dark') {
-        document.body.classList.add('dark');
+        document.body.classList.add('dark'); // aplicar modo oscuro
+        darkIcon.classList.replace('fa-moon', 'fa-sun'); // icono sol
+    } else {
+        document.body.classList.remove('dark'); // asegurar modo claro
+        darkIcon.classList.replace('fa-sun', 'fa-moon'); // icono luna
     }
 });
-
-
