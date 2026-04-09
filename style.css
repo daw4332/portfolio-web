@@ -4,7 +4,9 @@
     --text: #000000;          
     --card: #ffffff;         
     --border: #ccc;           
-    --hover-link: darkblue;      
+    --hover-link: darkblue;   
+      --shadow-card: rgba(0, 0, 0, 0.15); /* sombra base modo claro */
+  --shadow-card-hover: rgba(0, 0, 0, 0.25); /* sombra hover modo claro */   
    
 }
 
@@ -15,7 +17,9 @@ body.dark {
     --card: #1e1e1e;
     --border: #333;
     --hover-link: skyblue;
-    --shadow: rgba(255,255,255,0.05);
+     --shadow-card: rgba(255, 255, 255, 0.1); /* sombra base modo oscuro */
+  --shadow-card-hover: rgba(255, 255, 255, 0.25); /* sombra hover modo oscuro */
+
 }
 
 /* RESET */
@@ -125,13 +129,13 @@ main {
     background-color: var(--card);
     padding: 25px 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px var(--shadow);
+   box-shadow: 0 4px 12px var(--shadow-card);
     margin-top: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .educacion-card:hover {
-    box-shadow: 0 8px 20px var(--shadow);
+   box-shadow: 0 8px 24px var(--shadow-card-hover);
 }
 
 .educacion-card h3 {
@@ -155,7 +159,7 @@ main {
 #experiencia {
     padding: 50px;
     border-bottom: 3px solid var(--border);
-    box-shadow: 0 3px 5px -3px var(--shadow);
+    box-shadow: 0 4px 12px var(--shadow-card);
 }
 
 .experiencia-card {
@@ -172,7 +176,7 @@ main {
 }
 
 .experiencia-card:hover {
-    box-shadow: 0 8px 20px var(--shadow);
+      box-shadow: 0 8px 24px var(--shadow-card-hover);
 }
 
 .logo-empresa img {
@@ -218,13 +222,13 @@ main {
     background-color: var(--card);
     padding: 25px 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px var(--shadow);
+    box-shadow: 0 4px 12px var(--shadow-card);
     flex: 1 1 250px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .habilidad-card:hover {
-    box-shadow: 0 8px 18px var(--shadow);
+       box-shadow: 0 8px 24px var(--shadow-card-hover);
 }
 
 .habilidad-card h3 {
