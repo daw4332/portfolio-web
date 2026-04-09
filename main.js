@@ -37,3 +37,26 @@ navLinks.forEach(link => {
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 }); 
+
+const darkToggle = document.querySelector('.dark-toggle');
+
+darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+
+    // Guardar preferencia
+    if (document.body.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+// Mantener modo al recargar
+window.addEventListener('load', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark');
+    }
+});
+
+

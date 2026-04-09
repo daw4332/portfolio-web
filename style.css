@@ -1,3 +1,24 @@
+/* VARIABLES PARA MODO CLARO Y OSCURO */
+:root {
+    --bg: aliceblue;         
+    --text: #000000;          
+    --card: #ffffff;         
+    --border: #ccc;           
+    --hover-link: darkblue;      
+   
+}
+
+
+body.dark {
+    --bg: #121212;
+    --text: #f1f1f1;
+    --card: #1e1e1e;
+    --border: #333;
+    --hover-link: skyblue;
+    --shadow: rgba(255,255,255,0.05);
+}
+
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +27,13 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 /* HEADER */
 header {
-    background-color: white;
+    background-color: var(--card);
     padding: 15px 40px;
     position: sticky;
     top: 0;
@@ -25,7 +48,7 @@ header {
 
 /* LOGO */
 .logo a {
-    color: black;
+    color: var(--text);
     font-size: 20px;
     text-decoration: none;
     font-weight: bold;
@@ -39,110 +62,54 @@ header {
 }
 
 .nav-links a {
-    color: black;
+    color: var(--text);
     text-decoration: none;
-      display: inline-block;   /* importante para que funcione transform */
+    display: inline-block;
     transition: color 0.3s, transform 0.2s;
 }
 
 .nav-links a:hover {
-     transform: scale(1.1); /* crece ligeramente */
+    transform: scale(1.1);
+    color: var(--hover-link);
 }
 
-
+/* SECCIONES */
 section {
     padding: 50px;
-    border-bottom: 3px solid #ccc;  /* línea gris */
-     box-shadow: 0 3px 5px -3px rgba(0,0,0,0.2); /* sombra sutil debajo de la línea */
-    
+    border-bottom: 3px solid var(--border);
+    box-shadow: 0 3px 5px -3px var(--shadow);
 }
 
-/* Para la última sección, opcional: quitar la línea inferior */
 section:last-of-type {
     border-bottom: none;
 }
 
-/* Footer más delgado */
-.footer {
-    background-color: #111;
-   color: #9ca3af;
-    padding: 15px 40px;
-}
-
-/* Contenedor superior: izquierda y derecha en la misma línea */
-.footer-left .title {
-    font-weight: bold;
-    font-size: 16px;      /* tamaño principal */
-    margin: 0;             /* quitamos margen superior */
-    padding-top: 5px;      /* un poquito de espacio desde arriba */
-    color: white;
-}
-
-.footer-left p {
-    font-size: 14px;       /* más pequeño que el título */
-    margin: 3px 0 0 0;     /* pequeño margen arriba */
-}
-
-/* Ajuste vertical para alinear con los iconos */
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;   /* mantiene iconos y texto alineados */
-}
-/* Derecha: iconos en línea */
-.footer-right {
-    display: flex;
-    flex-direction: row; 
-    gap: 15px; 
-    align-items: center;
-}
-
-.footer-right a {
-    color: white;
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.footer-right a:hover {
-    color: #00bcd4;
-    transform: scale(1.2);
-}
-
-/* Centro */
-.footer-center {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
+/* MAIN */
 main {
-    background-color: aliceblue
+    background-color: var(--bg);
 }
 
-/* Contenedor horizontal */
+/* SOBRE MI */
 .sobre-mi-container {
     display: flex;
-    align-items: center;       /* alinea verticalmente */
-    gap: 40px;                 /* espacio entre foto y texto */
+    align-items: center;
+    gap: 40px;
     padding-top: 20px;
-    flex-wrap: wrap;           /* para que en pantallas pequeñas se ponga en vertical */
+    flex-wrap: wrap;
 }
 
-/* Foto */
 .sobre-mi-container .foto img {
     width: 250px;
     height: 250px;
-    object-fit: cover;         /* recorta la imagen si es necesario */
-    border-radius: 15px;       /* bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--shadow);
 }
 
-/* Información */
 .sobre-mi-container .info {
-    flex: 1;                   /* ocupa todo el espacio restante */
+    flex: 1;
 }
 
-/* Párrafos y contacto */
 .sobre-mi-container .info p {
     margin-bottom: 15px;
     line-height: 1.6;
@@ -150,29 +117,26 @@ main {
 
 .sobre-mi-container .info .contacto p {
     font-weight: bold;
-    color: #333;
+    color: var(--text);
 }
 
-
+/* EDUCACION */
 .educacion-card {
-    background-color: #fff;       /* card blanca */
+    background-color: var(--card);
     padding: 25px 30px;
-    border-radius: 15px;          /* bordes redondeados */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* sombra sutil */
-    margin-top: 20px;             /* separación entre cards */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px var(--shadow);
+    margin-top: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Efecto hover: levanta la card ligeramente */
 .educacion-card:hover {
-
-    box-shadow: 0 8px 20px rgba(0,0,0,0.20);
+    box-shadow: 0 8px 20px var(--shadow);
 }
 
 .educacion-card h3 {
     font-size: 18px;
     font-weight: bold;
-  
 }
 
 .educacion-card .titulo-curso {
@@ -187,33 +151,30 @@ main {
     margin-top: 8px;
 }
 
-/* Sección */
+/* EXPERIENCIA */
 #experiencia {
     padding: 50px;
-    border-bottom: 3px solid #ccc;
-    box-shadow: 0 3px 5px -3px rgba(0,0,0,0.1);
+    border-bottom: 3px solid var(--border);
+    box-shadow: 0 3px 5px -3px var(--shadow);
 }
 
-/* Card de experiencia */
 .experiencia-card {
     display: flex;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--card);
     padding: 20px 25px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px var(--shadow);
     margin-top: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
     gap: 20px;
-    flex-wrap: wrap; /* para responsive */
+    flex-wrap: wrap;
 }
 
-/* Hover */
 .experiencia-card:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.20);
+    box-shadow: 0 8px 20px var(--shadow);
 }
 
-/* Logo de la empresa */
 .logo-empresa img {
     width: 80px;
     height: 80px;
@@ -222,7 +183,6 @@ main {
     background-color: #f9f9f9;
 }
 
-/* Información */
 .info-experiencia h3 {
     font-size: 18px;
     font-weight: bold;
@@ -241,9 +201,10 @@ main {
     color: #666;
 }
 
+/* HABILIDADES */
 #habilidades {
     padding: 50px;
-    border-bottom: 3px solid #ccc;
+    border-bottom: 3px solid var(--border);
 }
 
 .habilidades-container {
@@ -254,83 +215,148 @@ main {
 }
 
 .habilidad-card {
-    background-color: #fff;
+    background-color: var(--card);
     padding: 25px 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px var(--shadow);
     flex: 1 1 250px;
     transition: transform 0.3s, box-shadow 0.3s;
-    
 }
 
 .habilidad-card:hover {
-    box-shadow: 0 8px 18px rgba(0,0,0,0.20);
+    box-shadow: 0 8px 18px var(--shadow);
 }
 
 .habilidad-card h3 {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 12px;
-    color: #333;
+    color: var(--text);
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 6px;
 }
 
 .habilidad-card ul {
-    list-style-type: disc;
-    padding-left: 20px;
+    list-style: none;
+    padding-left: 0;
 }
 
-.habilidad-card ul li {
-    font-size: 14px;
+.habilidad-card li {
+    display: flex;
+    align-items: center;
     margin-bottom: 8px;
-    color: #555;
-    line-height: 1.5;
+    font-size: 15px;
 }
 
+.habilidad-card li i {
+    width: 22px;
+    margin-right: 10px;
+    font-size: 1rem;
+    color: var(--hover-link);
+}
 
+.diseñe {
+    margin-top: 50px;
+}
 
-/* Ocultar hamburger en escritorio */
+/* HAMBURGER & DARK TOGGLE */
 .hamburger {
     display: none;
     font-size: 24px;
     cursor: pointer;
 }
 
-/* Media query para pantallas pequeñas */
+.dark-toggle {
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+    color: var(--text);
+    transition: transform 0.3s;
+}
 
+.dark-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* PIE DE PÁGINA */
+.footer {
+    background-color: var(--card);
+    color: var(--text);
+    padding: 15px 40px;
+}
+
+.footer-left .title {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    padding-top: 5px;
+    color: var(--text);
+}
+
+.footer-left p {
+    font-size: 14px;
+    margin: 3px 0 0 0;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.footer-right a {
+    color: var(--text);
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.footer-right a:hover {
+    color: var(--hover-link);
+    transform: scale(1.2);
+}
+
+.footer-center {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
 @media screen and (max-width: 768px) {
     .nav-links {
         position: absolute;
-        top: 70px;        /* justo debajo del header */
-        right: 20px;      /* a la derecha */
-        width: 200px;     /* ancho compacto */
-        background-color: white;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        background-color: var(--card);
         border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 15px var(--shadow);
         flex-direction: column;
-        padding: 0;       /* quitamos padding inicial */
+        padding: 0;
         gap: 0;
-        max-height: 0;    /* oculto por defecto */
-        overflow: hidden; /* esencial para ocultar */
+        max-height: 0;
+        overflow: hidden;
         transition: max-height 0.4s ease, padding 0.4s ease;
         z-index: 1000;
     }
 
     .nav-links.active {
-        max-height: 500px; /* altura suficiente para mostrar todo */
-        padding: 10px 0;   /* padding solo cuando está activo */
-    }
-
-    .nav-links li {
-        list-style: none;
+        max-height: 500px;
+        padding: 10px 0;
     }
 
     .nav-links li a {
         display: block;
         padding: 12px 20px;
         text-align: left;
-        color: black;
+        color: var(--text);
         font-weight: 500;
         border-top: 1px solid #eee;
         transition: background 0.3s, color 0.3s;
