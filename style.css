@@ -327,12 +327,21 @@ main {
     font-size: 14px;
 }
 
+.proyectos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
 .proyecto-card {
   background: var(--card);
   padding: 20px;
   border-radius: 15px;
-  width: 280px;
+  width: 400px;
   box-shadow: 0 4px 12px var(--shadow-card);
+  display: flex;    
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .proyecto-card h3 {
